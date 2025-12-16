@@ -1,0 +1,184 @@
+# Isaac Sim Configuration for Humanoid Robot Training Environment
+
+realsim:
+  rendering:
+    width: 1280
+    height: 720
+    resolution: 1
+    enable_lights: true
+    enable_shadows: true
+    enable_reflections: true
+    enable_refractions: false
+    enable_motion_blur: false
+    temporal_samples: 1
+    max_surface_bounces: 8
+    max_subdivisions: 10
+    texture_resolution: 2048
+
+  physics:
+    solver_type: "TGS"
+    solver_position_iteration_count: 8
+    solver_velocity_iteration_count: 4
+    solver_max_error_reduction: 100
+    enable_gpu_physics: true
+    gpu_max_rigid_contact_count: 524288
+    gpu_max_rigid_patch_count: 32768
+    gpu_found_lost_pairs_capacity: 1024
+    gpu_total_aggregate_pairs_capacity: 1024
+    gpu_enqueue_mode: 2
+    gpu_dynamics_queue_size: 134217728
+    gpu_collision_queue_size: 134217728
+    gpu_heap_capacity: 67108864
+    gpu_temp_buffer_capacity: 16777216
+    gpu_max_num_partitions: 8
+
+  stage:
+    units_per_meter: 1.0
+    up_axis: "Y"
+    meters_per_unit: 1.0
+
+  rendering:
+    render_products:
+      camera_front:
+        resolution: [640, 480]
+        position: [0.5, 0.0, 0.8]
+        target: [0.0, 0.0, 0.0]
+        fov: 60.0
+      camera_head:
+        resolution: [640, 480]
+        position: [0.0, 0.0, 1.5]
+        target: [1.0, 0.0, 1.5]
+        fov: 90.0
+
+domain_randomization:
+  lighting:
+    intensity_range: [500, 1500]
+    color_temperature_range: [5000, 8000]
+    position_variance: [0.5, 0.5, 0.5]
+
+  materials:
+    roughness_range: [0.1, 0.9]
+    metallic_range: [0.0, 0.2]
+    specular_range: [0.1, 0.9]
+
+  textures:
+    randomize_color: true
+    randomize_pattern: true
+    randomize_roughness: true
+    randomize_normal: true
+
+  environment:
+    floor_roughness_range: [0.1, 0.8]
+    floor_friction_range: [0.5, 1.2]
+    object_friction_range: [0.3, 1.0]
+
+  dynamics:
+    mass_variance: 0.1
+    inertia_variance: 0.1
+    joint_damping_variance: 0.2
+    joint_friction_variance: 0.2
+
+robot_config:
+  humanoid:
+    base_mass: 10.0
+    base_link_size: [0.3, 0.2, 0.1]
+    max_velocity: 10.0
+    max_effort: 200.0
+    sensors:
+      imu:
+        enabled: true
+        update_rate: 100
+        noise_density: 0.0008
+        random_walk: 0.0002
+      camera:
+        enabled: true
+        resolution: [640, 480]
+        fov: 90.0
+      lidar:
+        enabled: true
+        range_min: 0.1
+        range_max: 25.0
+        horizontal_samples: 720
+        vertical_samples: 1
+
+training:
+  environment:
+    num_envs: 4096
+    env_spacing: 4.0
+    max_episode_length: 1000
+    enable_debug_vis: false
+    clip_obs: 100.0
+    clip_actions: 1.0
+
+  robot:
+    dof_props:
+      stiffness: [200.0, 200.0, 200.0, 200.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]
+      damping: [10.0, 10.0, 10.0, 10.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+
+    default_dof_pos:
+      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    default_dof_vel:
+      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+observations:
+  enable_history: true
+  history_length: 10
+  add_noise: true
+  noise_scale: 0.01
+
+  keys:
+    - "base_pos"
+    - "base_quat"
+    - "base_lin_vel"
+    - "base_ang_vel"
+    - "dof_pos"
+    - "dof_vel"
+    - "actions"
+    - "commands"
+    - "euler_angles"
+    - "projected_gravity"
+
+rewards:
+  enable_debug: false
+  scales:
+    tracking_lin_vel: 1.5
+    tracking_ang_vel: 0.5
+    lin_vel_z: -2.0
+    ang_vel_xy: -0.05
+    orientation: -2.0
+    torques: -0.00001
+    dof_vel: -0.0001
+    dof_acc: -2.5e-07
+    base_height: -0.0
+    feet_air_time: 1.0
+    collision: -1.0
+    action_rate: -0.01
+    stand_still: -0.5
+    feet_contact_forces: -0.01
+
+  termination_height: 0.3
+  terminal_body_height: 0.5
+  terminal_velocity: 5.0
+
+commands:
+  lin_vel_x_range: [-1.0, 1.0]
+  lin_vel_y_range: [-0.5, 0.5]
+  ang_vel_z_range: [-1.0, 1.0]
+  frequency: 25
+
+interval:
+  physics: 60
+  rendering: 60
+  contact_sensors: 60
+  lidar: 12
+  camera: 12
+
+device:
+  sim_device: "gpu"
+  rl_device: "cuda:0"
+  graphics_device: "cuda:0"
+
+seed:
+  sim: 42
+  task: 42

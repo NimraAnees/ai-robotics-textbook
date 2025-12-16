@@ -1,0 +1,185 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.mainTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.mainSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 576px) {
+  .buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .buttons .button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.modulesSection {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2d3748;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #718096;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moduleCard {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.iconContainer {
+  margin-bottom: 1rem;
+  color: #4299e1;
+}
+
+.capstoneSection {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.capstoneContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.capstoneFeatures {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.capstoneFeatures li {
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.capstoneImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #4299e1;
+}
+
+.imageCaption {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #718096;
+}
+
+.codeExamplesSection {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.exampleCard {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exampleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .capstoneSection .row {
+    flex-direction: column;
+  }
+
+  .capstoneSection .col {
+    margin-bottom: 2rem;
+  }
+
+  .capstoneSection .col:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modulesSection,
+  .capstoneSection,
+  .codeExamplesSection {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,67 @@
+# IMU Sensor Configuration for Humanoid Robot Simulation
+
+sensor_type: "imu"
+sensor_name: "humanoid_imu"
+update_rate: 100.0
+imu:
+  angular_velocity:
+    x:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.0017
+    y:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.0017
+    z:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.0017
+  linear_acceleration:
+    x:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.017
+    y:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.017
+    z:
+      noise:
+        type: "gaussian"
+        mean: 0.0
+        stddev: 0.017
+  orientation:
+    covariance_diagonal: [0.001, 0.001, 0.001]
+publishers:
+  imu_data: "/imu/data"
+  imu_raw: "/imu/raw"
+frame_id: "imu_link"
+parent_link: "torso_link"
+pose:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+ros_topic: "/imu"
+ros_namespace: "imu"
+initial_orientation_as_reference: false
+bias:
+  angular_velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  linear_acceleration:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+drift:
+  angular_velocity: [0.0001, 0.0001, 0.0001]
+  linear_acceleration: [0.0001, 0.0001, 0.0001]

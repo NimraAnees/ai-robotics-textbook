@@ -1,0 +1,268 @@
+# Isaac ROS Integration Configuration
+
+# Visual SLAM Configuration
+visual_slam:
+  enabled: true
+  use_sim_time: true
+  input_type: "Stereo"  # Options: "Stereo", "StereoImu", "RGB", "RGBD"
+
+  # Input topics
+  left_image_topic: "/camera/left/image_rect_color"
+  right_image_topic: "/camera/right/image_rect_color"
+  imu_topic: "/imu/data"
+
+  # Output topics
+  pose_topic: "/visual_slam/pose_graph/pose"
+  odom_topic: "/visual_slam/odometry"
+  map_topic: "/visual_slam/traj_map"
+
+  # Parameters
+  enable_debug_mode: false
+  enable_imu_fusion: true
+  enable_localization: false
+  enable_mapping: true
+  enable_occupancy_map: true
+
+  # Tracking parameters
+  min_num_points: 100
+  max_num_points: 1000
+  min_distance_between_poses: 0.1
+  max_pose_graph_nodes: 500
+
+  # Processing parameters
+  stereo_algorithm: "BlockMatching"
+  stereo_matching_radius: 5
+  max_disparity: 128
+
+  # Optimization parameters
+  optimize_map_every_n_poses: 10
+  max_solver_time: 0.01  # seconds
+
+# AprilTag Detection Configuration
+apriltag:
+  enabled: true
+  use_sim_time: true
+
+  # Input/output topics
+  image_topic: "/camera/rgb/image_rect_color"
+  camera_info_topic: "/camera/rgb/camera_info"
+  detections_topic: "/apriltag/detections"
+
+  # Parameters
+  family: "TURTLEBOT4_TAG36H11"
+  max_tags: 64
+  quad_decimate: 2.0
+  quad_sigma: 0.0
+  refine_edges: true
+  decode_sharpening: 0.25
+  min_tag_width: 0.05  # meters
+  max_tag_width: 1.0   # meters
+
+  # Transform parameters
+  optical_frame_orientation: [0.0, 0.0, 0.0, 1.0]  # quaternion [x, y, z, w]
+
+# Stereo DNN Configuration
+stereo_dnn:
+  enabled: true
+  use_sim_time: true
+
+  # Input topics
+  left_image_topic: "/camera/left/image_rect_color"
+  right_image_topic: "/camera/right/image_rect_color"
+  left_camera_info_topic: "/camera/left/camera_info"
+  right_camera_info_topic: "/camera/right/camera_info"
+
+  # Output topics
+  disparity_topic: "/stereo_dnn/disparity"
+  pointcloud_topic: "/stereo_dnn/pointcloud"
+  detections_topic: "/stereo_dnn/detections"
+
+  # Network parameters
+  backbone: "DenseBox3D"
+  tensorRT_engine_file: "/path/to/tensorrt/engine"
+  input_tensor_names: ["input_left", "input_right"]
+  output_tensor_names: ["bbox", "conf", "cls", "dims", "loc", "rot"]
+
+  # Processing parameters
+  input_width: 848
+  input_height: 480
+  max_workspace_size: 1073741824  # 1GB in bytes
+  inference_fps: 30
+
+# NITROS Configuration (Network Interface for Trust, Reliability, and Safety)
+nitros:
+  enabled: true
+
+  # Publisher queue sizes
+  publisher_queue_size: 10
+  subscriber_queue_size: 10
+
+  # QoS settings
+  qos_history: "keep_last"
+  qos_depth: 10
+  qos_reliability: "reliable"
+  qos_durability: "volatile"
+
+  # Performance settings
+  enable_performance_metrics: true
+  enable_type_adaptation: true
+  enable_message_filtering: false
+
+# ISAAC ROS Bridge Configuration
+ros_bridge:
+  # General settings
+  use_sim_time: true
+  clock_publish_rate: 100  # Hz
+
+  # Sensor bridge settings
+  sensor_bridge:
+    enabled: true
+    publish_frequency: 100  # Hz for IMU
+    image_publish_frequency: 30  # Hz for cameras
+    pointcloud_publish_frequency: 10  # Hz for LiDAR/depth
+
+  # Control bridge settings
+  control_bridge:
+    enabled: true
+    command_frequency: 100  # Hz
+    state_frequency: 100  # Hz
+
+  # TF settings
+  tf:
+    enabled: true
+    publish_frequency: 100  # Hz
+    buffer_size: 10.0  # seconds
+
+# Perception Pipeline Configuration
+perception:
+  # Preprocessing
+  preprocessing:
+    image_normalization: true
+    depth_scaling_factor: 1000.0
+    stereo_rectification: true
+
+  # Object detection
+  object_detection:
+    confidence_threshold: 0.5
+    nms_threshold: 0.4
+    max_objects: 100
+
+  # Semantic segmentation
+  semantic_segmentation:
+    enabled: true
+    confidence_threshold: 0.7
+    colormap_path: "/path/to/colormap"
+
+  # Instance segmentation
+  instance_segmentation:
+    enabled: false
+    mask_threshold: 0.5
+
+# Navigation Integration
+navigation:
+  # Costmap settings
+  costmap:
+    update_frequency: 5.0  # Hz
+    publish_frequency: 2.0  # Hz
+    width: 20.0  # meters
+    height: 20.0  # meters
+    resolution: 0.05  # meters per cell
+    origin_x: -10.0
+    origin_y: -10.0
+
+    # Layer settings
+    obstacle_range: 3.0
+    raytrace_range: 4.0
+    footprint: [[-0.3, -0.3], [-0.3, 0.3], [0.3, 0.3], [0.3, -0.3]]
+    inflation_radius: 0.55
+    cost_scaling_factor: 10.0
+
+    # Sensor sources
+    observation_sources: ["scan", "camera"]
+    scan:
+      sensor_frame: "lidar_link"
+      data_type: "LaserScan"
+      topic: "/scan"
+      marking: true
+      clearing: true
+      obstacle_range: 3.0
+      raytrace_range: 4.0
+
+  # Planner settings
+  planner:
+    global_planner: "navfn/NavfnROS"
+    local_planner: "dwa_local_planner/DWAPlannerROS"
+
+    # Global planner parameters
+    navfn:
+      allow_unknown: false
+      planner_window_x: 0.0
+      planner_window_y: 0.0
+      default_tolerance: 0.0
+
+    # Local planner parameters
+    dwa:
+      acc_lim_x: 2.5
+      acc_lim_y: 0.0
+      acc_lim_theta: 3.2
+
+      max_vel_x: 0.5
+      min_vel_x: 0.1
+      max_vel_y: 0.0
+      min_vel_y: 0.0
+
+      max_trans_vel: 0.5
+      min_trans_vel: 0.1
+      max_rot_vel: 1.0
+      min_rot_vel: 0.1
+
+# Performance and Optimization
+performance:
+  # GPU settings
+  gpu:
+    device_id: 0
+    memory_fraction: 0.8
+    enable_tensorrt: true
+    tensorrt_fp16: true
+
+  # Processing settings
+  processing:
+    max_concurrent_threads: 4
+    enable_multithreading: true
+    buffer_size: 1024
+
+  # Memory settings
+  memory:
+    enable_memory_pool: true
+    memory_pool_size: 268435456  # 256MB
+    enable_memory_sharing: true
+
+# Safety and Monitoring
+safety:
+  # Emergency stop settings
+  emergency_stop:
+    enabled: true
+    timeout: 1.0  # seconds
+    velocity_threshold: 0.01  # m/s
+
+  # Monitoring settings
+  monitoring:
+    enable_system_monitoring: true
+    enable_sensor_monitoring: true
+    cpu_threshold: 80.0  # percent
+    memory_threshold: 80.0  # percent
+    gpu_memory_threshold: 85.0  # percent
+
+  # Recovery settings
+  recovery:
+    enable_recovery_behaviors: true
+    max_recovery_attempts: 3
+    recovery_delay: 0.5  # seconds
+
+# Logging and Debugging
+logging:
+  level: "INFO"
+  enable_rosbag_recording: false
+  rosbag_topics: ["/camera/rgb/image_rect_color", "/scan", "/odom", "/cmd_vel"]
+  enable_detailed_logging: false
+  log_directory: "/tmp/isaac_ros_logs"

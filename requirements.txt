@@ -1,0 +1,37 @@
+# ROS 2 Dependencies (Humble Hawksbill)
+rclpy>=3.3.0
+ros2cli>=0.9.0
+std_msgs>=2.0.0
+sensor_msgs>=2.0.0
+geometry_msgs>=2.0.0
+nav_msgs>=2.0.0
+tf2_ros>=0.22.0
+
+# Simulation Dependencies
+gazebo_ros_pkgs>=3.5.0
+
+# NVIDIA Isaac Dependencies
+isaac_ros_common>=2.0.0
+isaac_ros_visual_slam>=2.0.0
+isaac_ros_nitros>=2.0.0
+
+# Python AI/ML Libraries
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.5.0
+opencv-python>=4.5.0
+torch>=1.12.0
+torchvision>=0.13.0
+transformers>=4.20.0
+openai>=0.27.0
+
+# Audio Processing (for Whisper integration)
+openai-whisper>=20230306
+librosa>=0.9.0
+soundfile>=0.10.0
+
+# General Utilities
+pyyaml>=6.0
+requests>=2.28.0
+pandas>=1.4.0
+jupyter>=1.0.0

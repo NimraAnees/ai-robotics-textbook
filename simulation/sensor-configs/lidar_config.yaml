@@ -1,0 +1,41 @@
+# LiDAR Sensor Configuration for Humanoid Robot Simulation
+
+sensor_type: "ray"
+sensor_name: "humanoid_lidar_3d"
+update_rate: 10.0
+ray_count:
+  horizontal: 720
+  vertical: 1
+range:
+  min: 0.1
+  max: 30.0
+  resolution: 0.01
+scan:
+  horizontal:
+    samples: 720
+    resolution: 1
+    min_angle: -3.14159  # -π radians (-180 degrees)
+    max_angle: 3.14159   # π radians (180 degrees)
+  vertical:
+    samples: 1
+    resolution: 1
+    min_angle: 0
+    max_angle: 0
+noise:
+  type: "gaussian"
+  mean: 0.0
+  stddev: 0.01
+publishers:
+  scan: "/laser_scan"
+  point_cloud: "/point_cloud"
+frame_id: "lidar_link"
+parent_link: "base_link"
+pose:
+  x: 0.0
+  y: 0.0
+  z: 1.0
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+ros_topic: "/scan"
+ros_namespace: "lidar"
