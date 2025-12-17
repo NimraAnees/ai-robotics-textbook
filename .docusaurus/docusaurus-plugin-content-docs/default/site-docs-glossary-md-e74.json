@@ -1,0 +1,19 @@
+{
+  "id": "glossary",
+  "title": "Glossary",
+  "description": "This glossary defines key terms used throughout the AI Robotics Textbook, organized by topic area.",
+  "source": "@site/docs/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/ai-robotics-textbook/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/glossary.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 100,
+  "frontMatter": {
+    "sidebar_label": "Glossary",
+    "sidebar_position": 100
+  }
+}

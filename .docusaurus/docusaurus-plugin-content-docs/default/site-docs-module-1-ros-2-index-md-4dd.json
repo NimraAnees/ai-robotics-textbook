@@ -1,0 +1,28 @@
+{
+  "id": "module-1-ros2/index",
+  "title": "Module 1: Robotic Nervous System (ROS 2)",
+  "description": "This module introduces the fundamental concepts of ROS 2 (Robot Operating System 2), which serves as the communication backbone for robotic systems. You'll learn how to design, implement, and connect different components of a robot system through ROS 2's distributed architecture.",
+  "source": "@site/docs/module-1-ros2/index.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/",
+  "permalink": "/ai-robotics-textbook/docs/module-1-ros2/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-ros2/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Module 1: Robotic Nervous System (ROS 2)",
+    "sidebar_position": 2
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 2: Python Integration with rclpy",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/chapter-2"
+  },
+  "next": {
+    "title": "Chapter 3: Launch Files and Parameters",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/chapter-3"
+  }
+}

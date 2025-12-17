@@ -1,0 +1,28 @@
+{
+  "id": "module-1-ros2/chapter-2",
+  "title": "Chapter 2: Python Integration with rclpy",
+  "description": "This chapter focuses on implementing ROS 2 concepts using Python and the rclpy library. You'll learn how to create nodes, publish and subscribe to topics, implement services, and work with actions in Python.",
+  "source": "@site/docs/module-1-ros2/chapter-2.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/chapter-2",
+  "permalink": "/ai-robotics-textbook/docs/module-1-ros2/chapter-2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-ros2/chapter-2.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Chapter 2: Python Integration with rclpy",
+    "sidebar_position": 2
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 1: ROS 2 Architecture",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/chapter-1"
+  },
+  "next": {
+    "title": "Module 1: Robotic Nervous System (ROS 2)",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/"
+  }
+}

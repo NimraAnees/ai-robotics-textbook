@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Introduction to AI Robotics Textbook",
+  "description": "Welcome to the comprehensive guide to Physical AI & Humanoid Robotics. This textbook is designed for undergraduate CS/AI/Robotics students and covers the essential concepts needed to understand and build intelligent robotic systems.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/ai-robotics-textbook/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "textbookSidebar",
+  "next": {
+    "title": "Learning Objectives",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/learning-objectives"
+  }
+}

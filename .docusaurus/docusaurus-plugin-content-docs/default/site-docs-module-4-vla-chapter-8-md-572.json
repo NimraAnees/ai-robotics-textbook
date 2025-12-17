@@ -1,0 +1,28 @@
+{
+  "id": "module-4-vla/chapter-8",
+  "title": "Chapter 8: LLM-Based Cognitive Planning to ROS Actions",
+  "description": "Overview",
+  "source": "@site/docs/module-4-vla/chapter-8.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/chapter-8",
+  "permalink": "/ai-robotics-textbook/docs/module-4-vla/chapter-8",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-4-vla/chapter-8.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Chapter 8: LLM-Based Cognitive Planning to ROS Actions",
+    "sidebar_position": 2
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 7: Voice Processing with Whisper",
+    "permalink": "/ai-robotics-textbook/docs/module-4-vla/chapter-7"
+  },
+  "next": {
+    "title": "Capstone Project: Autonomous Humanoid",
+    "permalink": "/ai-robotics-textbook/docs/module-4-vla/capstone-project"
+  }
+}

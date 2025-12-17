@@ -1,0 +1,15 @@
+{
+  "id": "assets/diagrams/vla-system-architecture",
+  "title": "Vision-Language-Action (VLA) System Architecture",
+  "description": "Description",
+  "source": "@site/docs/assets/diagrams/vla-system-architecture.md",
+  "sourceDirName": "assets/diagrams",
+  "slug": "/assets/diagrams/vla-system-architecture",
+  "permalink": "/ai-robotics-textbook/docs/assets/diagrams/vla-system-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/assets/diagrams/vla-system-architecture.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

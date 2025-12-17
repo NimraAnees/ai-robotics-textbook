@@ -1,0 +1,28 @@
+{
+  "id": "module-3-ai-robot-brain/mini-project",
+  "title": "Mini-Project: Perception + Navigation Stack",
+  "description": "Overview",
+  "source": "@site/docs/module-3-ai-robot-brain/mini-project.md",
+  "sourceDirName": "module-3-ai-robot-brain",
+  "slug": "/module-3-ai-robot-brain/mini-project",
+  "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/mini-project",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-3-ai-robot-brain/mini-project.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Mini-Project: Perception + Navigation Stack",
+    "sidebar_position": 3
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 6: Isaac ROS (VSLAM, Navigation, Perception)",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/chapter-6"
+  },
+  "next": {
+    "title": "Exercises",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/exercises"
+  }
+}

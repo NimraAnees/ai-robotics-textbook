@@ -1,0 +1,28 @@
+{
+  "id": "module-3-ai-robot-brain/chapter-6",
+  "title": "Chapter 6: Isaac ROS (VSLAM, Navigation, Perception)",
+  "description": "Overview",
+  "source": "@site/docs/module-3-ai-robot-brain/chapter-6.md",
+  "sourceDirName": "module-3-ai-robot-brain",
+  "slug": "/module-3-ai-robot-brain/chapter-6",
+  "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/chapter-6",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-3-ai-robot-brain/chapter-6.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Chapter 6: Isaac ROS (VSLAM, Navigation, Perception)",
+    "sidebar_position": 2
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 5: Isaac Sim and Synthetic Data Generation",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/chapter-5"
+  },
+  "next": {
+    "title": "Mini-Project: Perception + Navigation Stack",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/mini-project"
+  }
+}

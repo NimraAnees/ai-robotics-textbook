@@ -1,0 +1,28 @@
+{
+  "id": "module-1-robotic-nervous-system/chapter-5",
+  "title": "Chapter 5: Sensor-Actuator-Control Pipelines",
+  "description": "This chapter explores the integration of sensors, actuators, and control systems in ROS 2, forming the complete feedback loops necessary for autonomous robot operation. You'll learn how to create sensor-actuator-control pipelines that enable robots to perceive their environment, make decisions, and execute actions.",
+  "source": "@site/docs/module-1-robotic-nervous-system/chapter-5.md",
+  "sourceDirName": "module-1-robotic-nervous-system",
+  "slug": "/module-1-robotic-nervous-system/chapter-5",
+  "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-5",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-robotic-nervous-system/chapter-5.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_label": "Chapter 5: Sensor-Actuator-Control Pipelines",
+    "sidebar_position": 5
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 4: URDF Modeling for Humanoids",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-4"
+  },
+  "next": {
+    "title": "Exercises",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/exercises"
+  }
+}

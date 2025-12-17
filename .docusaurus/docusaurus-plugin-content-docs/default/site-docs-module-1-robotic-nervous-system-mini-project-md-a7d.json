@@ -1,0 +1,28 @@
+{
+  "id": "module-1-robotic-nervous-system/mini-project",
+  "title": "Mini-Project: ROS 2 Control Stack",
+  "description": "This mini-project brings together all the concepts from Module 1 to build a complete ROS 2 control stack for a simulated humanoid robot. You'll implement a distributed system with multiple nodes that communicate to control the robot's movements.",
+  "source": "@site/docs/module-1-robotic-nervous-system/mini-project.md",
+  "sourceDirName": "module-1-robotic-nervous-system",
+  "slug": "/module-1-robotic-nervous-system/mini-project",
+  "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/mini-project",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-robotic-nervous-system/mini-project.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Mini-Project: ROS 2 Control Stack",
+    "sidebar_position": 3
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 3: Launch Files and Parameters",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-3"
+  },
+  "next": {
+    "title": "Chapter 4: URDF Modeling for Humanoids",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-4"
+  }
+}

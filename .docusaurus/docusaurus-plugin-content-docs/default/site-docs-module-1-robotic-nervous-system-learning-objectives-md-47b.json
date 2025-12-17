@@ -1,0 +1,28 @@
+{
+  "id": "module-1-robotic-nervous-system/learning-objectives",
+  "title": "Module 1 Learning Objectives",
+  "description": "This document outlines the specific learning objectives for each chapter in Module 1: Robotic Nervous System (ROS 2). These objectives provide a clear roadmap of what students should be able to accomplish after completing each section.",
+  "source": "@site/docs/module-1-robotic-nervous-system/learning-objectives.md",
+  "sourceDirName": "module-1-robotic-nervous-system",
+  "slug": "/module-1-robotic-nervous-system/learning-objectives",
+  "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/learning-objectives",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-robotic-nervous-system/learning-objectives.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "sidebar_label": "Learning Objectives",
+    "sidebar_position": 0
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/ai-robotics-textbook/docs/intro"
+  },
+  "next": {
+    "title": "Chapter 1: ROS 2 Architecture",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-1"
+  }
+}

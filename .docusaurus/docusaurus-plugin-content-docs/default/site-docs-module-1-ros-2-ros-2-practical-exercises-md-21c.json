@@ -1,0 +1,24 @@
+{
+  "id": "module-1-ros2/ros2-practical-exercises",
+  "title": "ROS 2 Practical Exercises",
+  "description": "Exercise 1: Basic Publisher/Subscriber",
+  "source": "@site/docs/module-1-ros2/ros2-practical-exercises.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/ros2-practical-exercises",
+  "permalink": "/ai-robotics-textbook/docs/module-1-ros2/ros2-practical-exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-ros2/ros2-practical-exercises.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Exercises",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/exercises"
+  },
+  "next": {
+    "title": "Learning Objectives",
+    "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/learning-objectives"
+  }
+}

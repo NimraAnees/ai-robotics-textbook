@@ -1,0 +1,15 @@
+{
+  "id": "assets/diagrams/vslam-pipeline",
+  "title": "Visual SLAM Pipeline Diagram",
+  "description": "Description",
+  "source": "@site/docs/assets/diagrams/vslam-pipeline.md",
+  "sourceDirName": "assets/diagrams",
+  "slug": "/assets/diagrams/vslam-pipeline",
+  "permalink": "/ai-robotics-textbook/docs/assets/diagrams/vslam-pipeline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/assets/diagrams/vslam-pipeline.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

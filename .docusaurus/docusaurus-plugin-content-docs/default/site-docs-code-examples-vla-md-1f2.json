@@ -1,0 +1,17 @@
+{
+  "id": "code-examples/vla",
+  "title": "Vision-Language-Action Code Examples",
+  "description": "Coming soon.",
+  "source": "@site/docs/code-examples/vla.md",
+  "sourceDirName": "code-examples",
+  "slug": "/code-examples/vla",
+  "permalink": "/ai-robotics-textbook/docs/code-examples/vla",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/code-examples/vla.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Vision-Language-Action Code Examples"
+  }
+}

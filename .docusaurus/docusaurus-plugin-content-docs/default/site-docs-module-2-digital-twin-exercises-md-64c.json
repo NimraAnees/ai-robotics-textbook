@@ -1,0 +1,28 @@
+{
+  "id": "module-2-digital-twin/exercises",
+  "title": "Module 2: Simulation Exercises",
+  "description": "Exercise 1: Basic Gazebo Environment Setup",
+  "source": "@site/docs/module-2-digital-twin/exercises.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/exercises",
+  "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-2-digital-twin/exercises.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_label": "Exercises",
+    "sidebar_position": 4
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Mini-Project: Humanoid Digital Twin",
+    "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/mini-project"
+  },
+  "next": {
+    "title": "Learning Objectives",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/learning-objectives"
+  }
+}

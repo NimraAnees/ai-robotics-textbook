@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Robot head with neural connections -->
+  <circle cx="100" cy="80" r="40" fill="#3498db" opacity="0.8"/>
+
+  <!-- Neural network nodes -->
+  <circle cx="70" cy="50" r="8" fill="#e74c3c"/>
+  <circle cx="130" cy="50" r="8" fill="#e74c3c"/>
+  <circle cx="100" cy="30" r="8" fill="#e74c3c"/>
+
+  <!-- Neural connections -->
+  <line x1="100" y1="80" x2="70" y2="50" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="100" y1="80" x2="130" y2="50" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="100" y1="80" x2="100" y2="30" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="70" y1="50" x2="100" y2="30" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="130" y1="50" x2="100" y2="30" stroke="#9b59b6" stroke-width="2"/>
+
+  <!-- Robot body -->
+  <rect x="80" y="120" width="40" height="50" fill="#3498db" opacity="0.8"/>
+
+  <!-- Sensors -->
+  <circle cx="85" cy="130" r="5" fill="#2ecc71"/>
+  <circle cx="115" cy="130" r="5" fill="#2ecc71"/>
+  <circle cx="100" cy="140" r="5" fill="#2ecc71"/>
+
+  <!-- ROS communication -->
+  <circle cx="50" cy="160" r="15" fill="#f39c12" opacity="0.7"/>
+  <text x="50" y="165" font-size="10" text-anchor="middle" fill="white">ROS</text>
+
+  <circle cx="150" cy="160" r="15" fill="#f39c12" opacity="0.7"/>
+  <text x="150" y="165" font-size="10" text-anchor="middle" fill="white">2</text>
+
+  <!-- Connection lines -->
+  <line x1="90" y1="120" x2="50" y2="160" stroke="#f39c12" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="110" y1="120" x2="150" y2="160" stroke="#f39c12" stroke-width="2" stroke-dasharray="4"/>
+</svg>

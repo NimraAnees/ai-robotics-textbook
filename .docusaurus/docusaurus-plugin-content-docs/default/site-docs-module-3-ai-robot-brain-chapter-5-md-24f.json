@@ -1,0 +1,28 @@
+{
+  "id": "module-3-ai-robot-brain/chapter-5",
+  "title": "Chapter 5: Isaac Sim and Synthetic Data Generation",
+  "description": "Overview",
+  "source": "@site/docs/module-3-ai-robot-brain/chapter-5.md",
+  "sourceDirName": "module-3-ai-robot-brain",
+  "slug": "/module-3-ai-robot-brain/chapter-5",
+  "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/chapter-5",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-3-ai-robot-brain/chapter-5.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_label": "Chapter 5: Isaac Sim and Synthetic Data Generation",
+    "sidebar_position": 1
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Learning Objectives",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/learning-objectives"
+  },
+  "next": {
+    "title": "Chapter 6: Isaac ROS (VSLAM, Navigation, Perception)",
+    "permalink": "/ai-robotics-textbook/docs/module-3-ai-robot-brain/chapter-6"
+  }
+}

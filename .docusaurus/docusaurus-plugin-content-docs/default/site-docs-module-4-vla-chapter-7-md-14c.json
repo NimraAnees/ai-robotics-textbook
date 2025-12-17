@@ -1,0 +1,28 @@
+{
+  "id": "module-4-vla/chapter-7",
+  "title": "Chapter 7: Voice Processing with Whisper",
+  "description": "Overview",
+  "source": "@site/docs/module-4-vla/chapter-7.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/chapter-7",
+  "permalink": "/ai-robotics-textbook/docs/module-4-vla/chapter-7",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-4-vla/chapter-7.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_label": "Chapter 7: Voice Processing with Whisper",
+    "sidebar_position": 1
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Learning Objectives",
+    "permalink": "/ai-robotics-textbook/docs/module-4-vla/learning-objectives"
+  },
+  "next": {
+    "title": "Chapter 8: LLM-Based Cognitive Planning to ROS Actions",
+    "permalink": "/ai-robotics-textbook/docs/module-4-vla/chapter-8"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "assets/references/ros2-documentation-references",
+  "title": "ROS 2 Documentation References",
+  "description": "Official ROS 2 Documentation",
+  "source": "@site/docs/assets/references/ros2-documentation-references.md",
+  "sourceDirName": "assets/references",
+  "slug": "/assets/references/ros2-documentation-references",
+  "permalink": "/ai-robotics-textbook/docs/assets/references/ros2-documentation-references",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/assets/references/ros2-documentation-references.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

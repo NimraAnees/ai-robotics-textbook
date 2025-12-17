@@ -1,0 +1,28 @@
+{
+  "id": "module-2-digital-twin/chapter-4",
+  "title": "Chapter 4: Sensor Simulation and Integration",
+  "description": "Overview",
+  "source": "@site/docs/module-2-digital-twin/chapter-4.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/chapter-4",
+  "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/chapter-4",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-2-digital-twin/chapter-4.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Chapter 4: Sensor Simulation and Integration",
+    "sidebar_position": 2
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 3: Physics Simulation Fundamentals",
+    "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/chapter-3"
+  },
+  "next": {
+    "title": "Module 2: Digital Twin (Gazebo & Unity)",
+    "permalink": "/ai-robotics-textbook/docs/module-2-digital-twin/"
+  }
+}

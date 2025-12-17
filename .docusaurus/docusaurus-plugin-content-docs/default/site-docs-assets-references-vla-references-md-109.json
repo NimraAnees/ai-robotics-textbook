@@ -1,0 +1,15 @@
+{
+  "id": "assets/references/vla-references",
+  "title": "Vision-Language-Action Integration References",
+  "description": "Vision-Language-Action Research",
+  "source": "@site/docs/assets/references/vla-references.md",
+  "sourceDirName": "assets/references",
+  "slug": "/assets/references/vla-references",
+  "permalink": "/ai-robotics-textbook/docs/assets/references/vla-references",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/assets/references/vla-references.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

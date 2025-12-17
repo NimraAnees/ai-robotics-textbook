@@ -1,0 +1,17 @@
+{
+  "id": "code-examples/ai",
+  "title": "AI Code Examples",
+  "description": "Coming soon.",
+  "source": "@site/docs/code-examples/ai.md",
+  "sourceDirName": "code-examples",
+  "slug": "/code-examples/ai",
+  "permalink": "/ai-robotics-textbook/docs/code-examples/ai",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/code-examples/ai.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "AI Code Examples"
+  }
+}

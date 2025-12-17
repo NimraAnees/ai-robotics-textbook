@@ -1,0 +1,28 @@
+{
+  "id": "module-1-robotic-nervous-system/chapter-4",
+  "title": "Chapter 4: URDF Modeling for Humanoids",
+  "description": "This chapter covers URDF (Unified Robot Description Format) for modeling humanoid robots. URDF is essential for defining robot kinematics, dynamics, and visual representation in ROS 2 systems.",
+  "source": "@site/docs/module-1-robotic-nervous-system/chapter-4.md",
+  "sourceDirName": "module-1-robotic-nervous-system",
+  "slug": "/module-1-robotic-nervous-system/chapter-4",
+  "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-4",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-robotic-nervous-system/chapter-4.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_label": "Chapter 4: URDF Modeling for Humanoids",
+    "sidebar_position": 4
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Mini-Project: ROS 2 Control Stack",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/mini-project"
+  },
+  "next": {
+    "title": "Chapter 5: Sensor-Actuator-Control Pipelines",
+    "permalink": "/ai-robotics-textbook/docs/module-1-robotic-nervous-system/chapter-5"
+  }
+}

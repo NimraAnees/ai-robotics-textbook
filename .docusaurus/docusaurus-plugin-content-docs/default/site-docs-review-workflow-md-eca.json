@@ -1,0 +1,15 @@
+{
+  "id": "review-workflow",
+  "title": "Content Review and Verification Workflow",
+  "description": "This document outlines the process for reviewing and verifying content in the AI Robotics Textbook to ensure accuracy, clarity, and educational effectiveness.",
+  "source": "@site/docs/review-workflow.md",
+  "sourceDirName": ".",
+  "slug": "/review-workflow",
+  "permalink": "/ai-robotics-textbook/docs/review-workflow",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/review-workflow.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

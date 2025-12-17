@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-2-digital-twin/exercises" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 2: Simulation Exercises | Physical AI &amp; Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://nimraanees.github.io/ai-robotics-textbook/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://nimraanees.github.io/ai-robotics-textbook/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://nimraanees.github.io/ai-robotics-textbook/docs/module-2-digital-twin/exercises"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 2: Simulation Exercises | Physical AI &amp; Humanoid Robotics"><meta data-rh="true" name="description" content="Exercise 1: Basic Gazebo Environment Setup"><meta data-rh="true" property="og:description" content="Exercise 1: Basic Gazebo Environment Setup"><link data-rh="true" rel="icon" href="/ai-robotics-textbook/img/logo1.png"><link data-rh="true" rel="canonical" href="https://nimraanees.github.io/ai-robotics-textbook/docs/module-2-digital-twin/exercises"><link data-rh="true" rel="alternate" href="https://nimraanees.github.io/ai-robotics-textbook/docs/module-2-digital-twin/exercises" hreflang="en"><link data-rh="true" rel="alternate" href="https://nimraanees.github.io/ai-robotics-textbook/docs/module-2-digital-twin/exercises" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Exercises","item":"https://nimraanees.github.io/ai-robotics-textbook/docs/module-2-digital-twin/exercises"}]}</script><link rel="stylesheet" href="/ai-robotics-textbook/assets/css/styles.bb58b4ec.css">
+<script src="/ai-robotics-textbook/assets/js/runtime~main.4b3dd92e.js" defer="defer"></script>
+<script src="/ai-robotics-textbook/assets/js/main.88095506.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai-robotics-textbook/"><div class="navbar__logo"><img src="/ai-robotics-textbook/img/logo1.png" alt="Robotics Textbook Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai-robotics-textbook/img/logo1.png" alt="Robotics Textbook Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI Robotics Textbook</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/ai-robotics-textbook/docs/intro">Docs</a><a class="navbar__item navbar__link" href="/ai-robotics-textbook/docs/modules">Curriculum</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/humonide-book/ai-robotics-textbook" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-robotics-textbook/docs/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-robotics-textbook/docs/module-1-robotic-nervous-system/learning-objectives"><span title="Module 1: Robotic Nervous System" class="categoryLinkLabel_W154">Module 1: Robotic Nervous System</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/ai-robotics-textbook/docs/module-2-digital-twin/learning-objectives"><span title="Module 2: Digital Twin" class="categoryLinkLabel_W154">Module 2: Digital Twin</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/learning-objectives"><span title="Learning Objectives" class="linkLabel_WmDU">Learning Objectives</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/chapter-3"><span title="Chapter 3: Physics Simulation Fundamentals" class="linkLabel_WmDU">Chapter 3: Physics Simulation Fundamentals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/chapter-4"><span title="Chapter 4: Sensor Simulation and Integration" class="linkLabel_WmDU">Chapter 4: Sensor Simulation and Integration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/"><span title="Module 2: Digital Twin (Gazebo &amp; Unity)" class="linkLabel_WmDU">Module 2: Digital Twin (Gazebo &amp; Unity)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/mini-project"><span title="Mini-Project: Humanoid Digital Twin" class="linkLabel_WmDU">Mini-Project: Humanoid Digital Twin</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai-robotics-textbook/docs/module-2-digital-twin/exercises"><span title="Exercises" class="linkLabel_WmDU">Exercises</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-robotics-textbook/docs/module-3-ai-robot-brain/learning-objectives"><span title="Module 3: AI Robot Brain" class="categoryLinkLabel_W154">Module 3: AI Robot Brain</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-robotics-textbook/docs/module-4-vla/learning-objectives"><span title="Module 4: VLA" class="categoryLinkLabel_W154">Module 4: VLA</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-robotics-textbook/docs/references"><span title="References" class="linkLabel_WmDU">References</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/ai-robotics-textbook/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Module 2: Digital Twin</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Exercises</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 2: Simulation Exercises</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-1-basic-gazebo-environment-setup">Exercise 1: Basic Gazebo Environment Setup<a href="#exercise-1-basic-gazebo-environment-setup" class="hash-link" aria-label="Direct link to Exercise 1: Basic Gazebo Environment Setup" title="Direct link to Exercise 1: Basic Gazebo Environment Setup" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective">Objective<a href="#objective" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Set up a basic Gazebo simulation environment with a simple robot model.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">ROS 2 Humble Hawksbill installed</li>
+<li class="">Basic understanding of URDF</li>
+<li class="">Familiarity with ROS 2 launch files</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions">Instructions<a href="#instructions" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Create a new ROS 2 package called <code>simulation_exercises</code></li>
+<li class="">Create a simple robot URDF model with at least 3 links and 2 joints</li>
+<li class="">Configure the model for Gazebo physics simulation</li>
+<li class="">Create a launch file that starts Gazebo with your robot</li>
+<li class="">Verify the robot appears correctly in the simulation</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome">Expected Outcome<a href="#expected-outcome" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Robot model loads in Gazebo without errors</li>
+<li class="">Physics simulation runs smoothly</li>
+<li class="">Robot responds to gravity appropriately</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria">Evaluation Criteria<a href="#evaluation-criteria" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">URDF model is valid and loads correctly</li>
+<li class="">Physics parameters are properly configured</li>
+<li class="">Launch file works without errors</li>
+<li class="">Robot behaves physically plausibly</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-2-lidar-sensor-integration">Exercise 2: LiDAR Sensor Integration<a href="#exercise-2-lidar-sensor-integration" class="hash-link" aria-label="Direct link to Exercise 2: LiDAR Sensor Integration" title="Direct link to Exercise 2: LiDAR Sensor Integration" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-1">Objective<a href="#objective-1" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Add a LiDAR sensor to your robot model and validate its output.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-1">Prerequisites<a href="#prerequisites-1" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Exercise 1 completed successfully</li>
+<li class="">Understanding of ROS 2 sensor messages</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-1">Instructions<a href="#instructions-1" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Add a LiDAR sensor to your robot URDF model</li>
+<li class="">Configure the sensor with realistic parameters (range, resolution, update rate)</li>
+<li class="">Create a ROS 2 node to subscribe to the LiDAR data</li>
+<li class="">Visualize the LiDAR data in RViz</li>
+<li class="">Test the sensor in various environments</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-1">Expected Outcome<a href="#expected-outcome-1" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">LiDAR sensor publishes sensor_msgs/LaserScan messages</li>
+<li class="">Data is correctly visualized in RViz</li>
+<li class="">Sensor behaves realistically in different environments</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-1">Evaluation Criteria<a href="#evaluation-criteria-1" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Sensor configuration is valid and realistic</li>
+<li class="">Data publishing and visualization work correctly</li>
+<li class="">Sensor responds appropriately to environmental changes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-3-depth-camera-simulation">Exercise 3: Depth Camera Simulation<a href="#exercise-3-depth-camera-simulation" class="hash-link" aria-label="Direct link to Exercise 3: Depth Camera Simulation" title="Direct link to Exercise 3: Depth Camera Simulation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-2">Objective<a href="#objective-2" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Integrate a depth camera into your robot model and process the data.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-2">Prerequisites<a href="#prerequisites-2" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Exercise 1 and 2 completed</li>
+<li class="">Understanding of image processing concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-2">Instructions<a href="#instructions-2" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Add a depth camera to your robot model</li>
+<li class="">Configure camera parameters (resolution, field of view, depth range)</li>
+<li class="">Create a ROS 2 node to process depth camera data</li>
+<li class="">Implement point cloud generation from depth data</li>
+<li class="">Test with various objects at different distances</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-2">Expected Outcome<a href="#expected-outcome-2" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Depth camera publishes RGB and depth images</li>
+<li class="">Point cloud is generated from depth data</li>
+<li class="">Data is processed and visualized correctly</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-2">Evaluation Criteria<a href="#evaluation-criteria-2" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Camera configuration is valid and realistic</li>
+<li class="">Image and depth data are published correctly</li>
+<li class="">Point cloud generation works as expected</li>
+<li class="">Processing node handles data appropriately</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-4-imu-sensor-integration">Exercise 4: IMU Sensor Integration<a href="#exercise-4-imu-sensor-integration" class="hash-link" aria-label="Direct link to Exercise 4: IMU Sensor Integration" title="Direct link to Exercise 4: IMU Sensor Integration" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-3">Objective<a href="#objective-3" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Add an IMU sensor to your robot and validate orientation measurements.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-3">Prerequisites<a href="#prerequisites-3" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Previous exercises completed</li>
+<li class="">Understanding of coordinate systems and orientations</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-3">Instructions<a href="#instructions-3" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Add an IMU sensor to your robot model</li>
+<li class="">Configure IMU parameters including noise characteristics</li>
+<li class="">Create a ROS 2 node to process IMU data</li>
+<li class="">Implement orientation estimation from IMU readings</li>
+<li class="">Test the IMU during various robot movements</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-3">Expected Outcome<a href="#expected-outcome-3" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">IMU publishes sensor_msgs/Imu messages</li>
+<li class="">Orientation is estimated accurately</li>
+<li class="">Sensor responds appropriately to robot movements</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-3">Evaluation Criteria<a href="#evaluation-criteria-3" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">IMU configuration includes realistic noise models</li>
+<li class="">Data publishing works correctly</li>
+<li class="">Orientation estimation is accurate</li>
+<li class="">Sensor responds properly to motion</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-5-multi-sensor-fusion">Exercise 5: Multi-Sensor Fusion<a href="#exercise-5-multi-sensor-fusion" class="hash-link" aria-label="Direct link to Exercise 5: Multi-Sensor Fusion" title="Direct link to Exercise 5: Multi-Sensor Fusion" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-4">Objective<a href="#objective-4" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Combine data from multiple sensors to improve environment perception.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-4">Prerequisites<a href="#prerequisites-4" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Exercises 2, 3, and 4 completed</li>
+<li class="">Understanding of sensor fusion concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-4">Instructions<a href="#instructions-4" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Integrate all three sensors (LiDAR, camera, IMU) on your robot</li>
+<li class="">Create a sensor fusion node that combines sensor data</li>
+<li class="">Implement a simple mapping algorithm using sensor data</li>
+<li class="">Test the fusion system in a complex environment</li>
+<li class="">Validate the fused data against individual sensor outputs</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-4">Expected Outcome<a href="#expected-outcome-4" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">All sensors operate simultaneously</li>
+<li class="">Fused data provides better perception than individual sensors</li>
+<li class="">Mapping algorithm creates coherent environment representation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-4">Evaluation Criteria<a href="#evaluation-criteria-4" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Multi-sensor integration works without conflicts</li>
+<li class="">Fusion algorithm improves perception quality</li>
+<li class="">Mapping is consistent and accurate</li>
+<li class="">System handles sensor data efficiently</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-6-physics-parameter-tuning">Exercise 6: Physics Parameter Tuning<a href="#exercise-6-physics-parameter-tuning" class="hash-link" aria-label="Direct link to Exercise 6: Physics Parameter Tuning" title="Direct link to Exercise 6: Physics Parameter Tuning" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-5">Objective<a href="#objective-5" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Tune physics parameters to achieve realistic robot behavior.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-5">Prerequisites<a href="#prerequisites-5" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Basic robot model with joints</li>
+<li class="">Understanding of physics simulation concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-5">Instructions<a href="#instructions-5" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Create a humanoid robot model with multiple joints</li>
+<li class="">Experiment with different physics parameters (time step, solver iterations)</li>
+<li class="">Tune joint dynamics (damping, friction, stiffness)</li>
+<li class="">Validate the robot&#x27;s stability and movement characteristics</li>
+<li class="">Document the optimal parameter set</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-5">Expected Outcome<a href="#expected-outcome-5" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Robot moves with realistic physics</li>
+<li class="">Simulation is stable without jittering</li>
+<li class="">Joint movements follow physical constraints</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-5">Evaluation Criteria<a href="#evaluation-criteria-5" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Physics parameters are optimized for stability</li>
+<li class="">Robot behavior is physically plausible</li>
+<li class="">Simulation performance is acceptable</li>
+<li class="">Parameter tuning process is documented</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-7-environment-design">Exercise 7: Environment Design<a href="#exercise-7-environment-design" class="hash-link" aria-label="Direct link to Exercise 7: Environment Design" title="Direct link to Exercise 7: Environment Design" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-6">Objective<a href="#objective-6" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Create a complex simulation environment with obstacles and features.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-6">Prerequisites<a href="#prerequisites-6" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Basic robot model working in simulation</li>
+<li class="">Understanding of Gazebo world files</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-6">Instructions<a href="#instructions-6" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Design a Gazebo world file with terrain features</li>
+<li class="">Add obstacles of various shapes and materials</li>
+<li class="">Include interactive elements (movable objects)</li>
+<li class="">Test robot navigation in the environment</li>
+<li class="">Validate collision detection and response</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-6">Expected Outcome<a href="#expected-outcome-6" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Environment loads correctly in Gazebo</li>
+<li class="">Robot interacts properly with environment</li>
+<li class="">Collision detection works as expected</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-6">Evaluation Criteria<a href="#evaluation-criteria-6" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">World file is valid and loads without errors</li>
+<li class="">Environment features work correctly</li>
+<li class="">Robot-environment interactions are realistic</li>
+<li class="">Collision handling is appropriate</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-8-simulation-validation">Exercise 8: Simulation Validation<a href="#exercise-8-simulation-validation" class="hash-link" aria-label="Direct link to Exercise 8: Simulation Validation" title="Direct link to Exercise 8: Simulation Validation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-7">Objective<a href="#objective-7" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Validate simulation results against expected physical behavior.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-7">Prerequisites<a href="#prerequisites-7" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">All previous exercises completed</li>
+<li class="">Understanding of validation concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-7">Instructions<a href="#instructions-7" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Design test scenarios with known expected outcomes</li>
+<li class="">Run simulations for each scenario</li>
+<li class="">Collect and analyze simulation data</li>
+<li class="">Compare simulation results with expected values</li>
+<li class="">Identify and document any discrepancies</li>
+<li class="">Propose parameter adjustments to improve accuracy</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-7">Expected Outcome<a href="#expected-outcome-7" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Simulation results match expected physical behavior</li>
+<li class="">Discrepancies are identified and documented</li>
+<li class="">Parameter adjustments improve accuracy</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-7">Evaluation Criteria<a href="#evaluation-criteria-7" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Test scenarios are well-designed and comprehensive</li>
+<li class="">Data collection and analysis are thorough</li>
+<li class="">Validation process is systematic and documented</li>
+<li class="">Improvements to simulation accuracy are achieved</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-9-performance-optimization">Exercise 9: Performance Optimization<a href="#exercise-9-performance-optimization" class="hash-link" aria-label="Direct link to Exercise 9: Performance Optimization" title="Direct link to Exercise 9: Performance Optimization" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-8">Objective<a href="#objective-8" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Optimize simulation performance while maintaining accuracy.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-8">Prerequisites<a href="#prerequisites-8" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Complex robot model and environment</li>
+<li class="">Understanding of performance metrics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-8">Instructions<a href="#instructions-8" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Measure current simulation performance (real-time factor)</li>
+<li class="">Identify performance bottlenecks</li>
+<li class="">Implement optimization techniques (level of detail, sensor update rates)</li>
+<li class="">Validate that accuracy is maintained after optimization</li>
+<li class="">Document performance improvements achieved</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-8">Expected Outcome<a href="#expected-outcome-8" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Simulation runs with improved real-time factor</li>
+<li class="">Accuracy is maintained after optimization</li>
+<li class="">Performance metrics are documented</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-8">Evaluation Criteria<a href="#evaluation-criteria-8" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Performance improvements are quantified</li>
+<li class="">Accuracy is verified after optimization</li>
+<li class="">Optimization techniques are appropriately applied</li>
+<li class="">Results are properly documented</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-10-advanced-sensor-simulation">Exercise 10: Advanced Sensor Simulation<a href="#exercise-10-advanced-sensor-simulation" class="hash-link" aria-label="Direct link to Exercise 10: Advanced Sensor Simulation" title="Direct link to Exercise 10: Advanced Sensor Simulation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-9">Objective<a href="#objective-9" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
+<p>Implement advanced sensor simulation techniques including noise modeling.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites-9">Prerequisites<a href="#prerequisites-9" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
+<ul>
+<li class="">Basic sensor integration completed</li>
+<li class="">Understanding of sensor error models</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructions-9">Instructions<a href="#instructions-9" class="hash-link" aria-label="Direct link to Instructions" title="Direct link to Instructions" translate="no">​</a></h3>
+<ol>
+<li class="">Enhance sensor models with realistic noise characteristics</li>
+<li class="">Implement sensor error models based on real hardware specifications</li>
+<li class="">Add sensor latency and bandwidth limitations</li>
+<li class="">Test sensor performance under various conditions</li>
+<li class="">Validate that simulated sensors behave like real hardware</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expected-outcome-9">Expected Outcome<a href="#expected-outcome-9" class="hash-link" aria-label="Direct link to Expected Outcome" title="Direct link to Expected Outcome" translate="no">​</a></h3>
+<ul>
+<li class="">Sensors include realistic noise and error models</li>
+<li class="">Sensor performance reflects real hardware limitations</li>
+<li class="">Simulation provides accurate representation of sensor challenges</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria-9">Evaluation Criteria<a href="#evaluation-criteria-9" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">Noise models are realistic and well-parameterized</li>
+<li class="">Sensor limitations are accurately represented</li>
+<li class="">Validation confirms realistic behavior</li>
+<li class="">Documentation explains the modeling approach</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grading-rubric">Grading Rubric<a href="#grading-rubric" class="hash-link" aria-label="Direct link to Grading Rubric" title="Direct link to Grading Rubric" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-90-100">A (90-100%)<a href="#a-90-100" class="hash-link" aria-label="Direct link to A (90-100%)" title="Direct link to A (90-100%)" translate="no">​</a></h3>
+<ul>
+<li class="">All exercises completed with high quality</li>
+<li class="">Code is well-documented and follows best practices</li>
+<li class="">Results are accurate and thoroughly validated</li>
+<li class="">Demonstrates deep understanding of concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-80-89">B (80-89%)<a href="#b-80-89" class="hash-link" aria-label="Direct link to B (80-89%)" title="Direct link to B (80-89%)" translate="no">​</a></h3>
+<ul>
+<li class="">Most exercises completed successfully</li>
+<li class="">Code is adequately documented</li>
+<li class="">Results are generally accurate</li>
+<li class="">Shows good understanding of concepts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-70-79">C (70-79%)<a href="#c-70-79" class="hash-link" aria-label="Direct link to C (70-79%)" title="Direct link to C (70-79%)" translate="no">​</a></h3>
+<ul>
+<li class="">Exercises completed with some issues</li>
+<li class="">Documentation is minimal</li>
+<li class="">Results have some inaccuracies</li>
+<li class="">Basic understanding demonstrated</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-60-69">D (60-69%)<a href="#d-60-69" class="hash-link" aria-label="Direct link to D (60-69%)" title="Direct link to D (60-69%)" translate="no">​</a></h3>
+<ul>
+<li class="">Exercises partially completed</li>
+<li class="">Limited documentation</li>
+<li class="">Results have significant issues</li>
+<li class="">Limited understanding shown</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="f-below-60">F (Below 60%)<a href="#f-below-60" class="hash-link" aria-label="Direct link to F (Below 60%)" title="Direct link to F (Below 60%)" translate="no">​</a></h3>
+<ul>
+<li class="">Exercises incomplete or not submitted</li>
+<li class="">No meaningful documentation</li>
+<li class="">Results are inaccurate or missing</li>
+<li class="">No understanding demonstrated</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-2-digital-twin/exercises.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-robotics-textbook/docs/module-2-digital-twin/mini-project"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Mini-Project: Humanoid Digital Twin</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-robotics-textbook/docs/module-3-ai-robot-brain/learning-objectives"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Learning Objectives</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#exercise-1-basic-gazebo-environment-setup" class="table-of-contents__link toc-highlight">Exercise 1: Basic Gazebo Environment Setup</a><ul><li><a href="#objective" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-2-lidar-sensor-integration" class="table-of-contents__link toc-highlight">Exercise 2: LiDAR Sensor Integration</a><ul><li><a href="#objective-1" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-1" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-1" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-1" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-1" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-3-depth-camera-simulation" class="table-of-contents__link toc-highlight">Exercise 3: Depth Camera Simulation</a><ul><li><a href="#objective-2" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-2" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-2" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-2" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-2" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-4-imu-sensor-integration" class="table-of-contents__link toc-highlight">Exercise 4: IMU Sensor Integration</a><ul><li><a href="#objective-3" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-3" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-3" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-3" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-3" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-5-multi-sensor-fusion" class="table-of-contents__link toc-highlight">Exercise 5: Multi-Sensor Fusion</a><ul><li><a href="#objective-4" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-4" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-4" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-4" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-4" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-6-physics-parameter-tuning" class="table-of-contents__link toc-highlight">Exercise 6: Physics Parameter Tuning</a><ul><li><a href="#objective-5" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-5" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-5" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-5" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-5" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-7-environment-design" class="table-of-contents__link toc-highlight">Exercise 7: Environment Design</a><ul><li><a href="#objective-6" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-6" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-6" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-6" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-6" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-8-simulation-validation" class="table-of-contents__link toc-highlight">Exercise 8: Simulation Validation</a><ul><li><a href="#objective-7" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-7" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-7" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-7" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-7" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-9-performance-optimization" class="table-of-contents__link toc-highlight">Exercise 9: Performance Optimization</a><ul><li><a href="#objective-8" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-8" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-8" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-8" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-8" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#exercise-10-advanced-sensor-simulation" class="table-of-contents__link toc-highlight">Exercise 10: Advanced Sensor Simulation</a><ul><li><a href="#objective-9" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#prerequisites-9" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#instructions-9" class="table-of-contents__link toc-highlight">Instructions</a></li><li><a href="#expected-outcome-9" class="table-of-contents__link toc-highlight">Expected Outcome</a></li><li><a href="#evaluation-criteria-9" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li></ul></li><li><a href="#grading-rubric" class="table-of-contents__link toc-highlight">Grading Rubric</a><ul><li><a href="#a-90-100" class="table-of-contents__link toc-highlight">A (90-100%)</a></li><li><a href="#b-80-89" class="table-of-contents__link toc-highlight">B (80-89%)</a></li><li><a href="#c-70-79" class="table-of-contents__link toc-highlight">C (70-79%)</a></li><li><a href="#d-60-69" class="table-of-contents__link toc-highlight">D (60-69%)</a></li><li><a href="#f-below-60" class="table-of-contents__link toc-highlight">F (Below 60%)</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">About</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/intro">Physical AI &amp; Humanoid Robotics</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Curriculum</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/module-1-robotic-nervous-system">Module 1: Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/module-2-digital-twin">Module 2: Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/module-3-ai-robot-brain">Module 3: AI Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/module-4-vla">Module 4: Vision-Language-Action</a></li><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/module-4-vla/capstone-project">Capstone Project</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/humonide-book/ai-robotics-textbook" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub Repository<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/ai-robotics-textbook/docs/intro">Documentation</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 – Physical AI & Humanoid Robotics</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "id": "module-1-ros2/chapter-3",
+  "title": "Chapter 3: Launch Files and Parameters",
+  "description": "This chapter covers ROS 2 launch files and parameter management, essential tools for configuring and starting complex robotic systems with multiple nodes.",
+  "source": "@site/docs/module-1-ros2/chapter-3.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/chapter-3",
+  "permalink": "/ai-robotics-textbook/docs/module-1-ros2/chapter-3",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/humonide-book/ai-robotics-textbook/edit/main/docs/module-1-ros2/chapter-3.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Chapter 3: Launch Files and Parameters",
+    "sidebar_position": 3
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Module 1: Robotic Nervous System (ROS 2)",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/"
+  },
+  "next": {
+    "title": "Mini-Project: ROS 2 Control Stack",
+    "permalink": "/ai-robotics-textbook/docs/module-1-ros2/mini-project"
+  }
+}
